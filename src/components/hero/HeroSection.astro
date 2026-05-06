@@ -204,19 +204,19 @@ import { schema } from '../../data/seo';
       <!-- Mascot behind content on mobile -->
       <img
         src="/img/leo-mascot.avif"
-        alt="Hyper-realistic Portrait of Leo Ashcraft"
+        alt="Hyper-realistic Portrait of Ghulam Haider"
         class="hero-mascot absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-auto pointer-events-none -z-10"
         aria-hidden="true"
       />
       <div class="h-card rounded-2xl p-6 mt-44 bg-black/70 shadow-[0_0_60px_40px_rgba(0,0,0,0.7)]">
         <h1 class="hero-title font-bold mb-6">
-          <span class="gradient-text-animated">Lead the web with <span class="p-name">Leo</span></span><span class="p-job-title sr-only">Full-Stack Software Developer</span>
+          <span class="gradient-text-animated">Lead the web with <span class="p-name">G.H</span></span><span class="p-job-title sr-only">Full-Stack Software Developer</span>
         </h1>
         <!-- About content -->
         <p class="p-note text-gray-300 text-base sm:text-lg leading-relaxed mb-6 text-left" lang="en">{profile.bio}</p>
         <!-- CTA -->
         <div class="flex flex-wrap gap-3 justify-center">
-          <a href={profile.resumeUrl} download class="btn btn-primary text-sm">
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary text-sm">
             Download Resume
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -229,8 +229,8 @@ import { schema } from '../../data/seo';
             </svg>
           </a>
         </div>
-        <a class="u-url u-uid" href="https://leoashcraft.com" hidden>leoashcraft.com</a>
-        <img class="u-photo" src="/img/selfie.avif" alt="Leo Ashcraft" hidden />
+        <a class="u-url u-uid" href="https://ghulamhaider.com" hidden>ghulamhaider.com</a>
+        <img class="u-photo" src="/img/selfie.avif" alt="Ghulam Haider" hidden />
         <data class="p-org" value={schema.worksFor.name}></data>
       </div>
     </div>
@@ -247,19 +247,19 @@ import { schema } from '../../data/seo';
         />
         <!-- Actual mascot image (positioned absolutely for visual, doesn't affect flow) -->
         <img
-          src="/img/leo-mascot.avif"
-          alt="Hyper-realistic Portrait of Leo Ashcraft"
+          src="/img/gh-removebg-preview.png"
+          alt="Hyper-realistic Portrait of Ghulam Haider"
           class="hero-mascot-visual"
         />
-        
+
         <!-- Content flows around the shape -->
         <h1 class="hero-title font-bold mb-10 mt-2 text-right md:opacity-0 md:animate-[fadeInUp_0.6s_ease_0.4s_forwards]">
-          <span class="gradient-text-animated">Lead the web with <span class="p-name">Leo</span></span><span class="p-job-title sr-only">Full-Stack Software Developer</span>
+          <span class="gradient-text-animated">Lead the web with <span class="p-name">G.H</span></span><span class="p-job-title sr-only">Full-Stack Software Developer</span>
         </h1>
         <p class="p-note text-gray-300 md:text-lg lg:text-xl leading-relaxed mb-8 min-[769px]:mb-16 text-justify hyphens-auto" lang="en">{profile.bio}</p>
         <!-- CTA -->
         <div class="hero-cta flex flex-nowrap gap-4 justify-center min-[863px]:justify-end min-[863px]:pr-0 lg:pr-[17%] max-[862px]:clear-left">
-          <a href={profile.resumeUrl} download class="btn btn-primary whitespace-nowrap shrink-0">
+          <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary whitespace-nowrap shrink-0">
             Download Resume
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -272,8 +272,8 @@ import { schema } from '../../data/seo';
             </svg>
           </a>
         </div>
-        <a class="u-url u-uid" href="https://leoashcraft.com" hidden>leoashcraft.com</a>
-        <img class="u-photo" src="/img/selfie.avif" alt="Leo Ashcraft" hidden />
+        <a class="u-url u-uid" href="https://ghulamhaider.com" hidden>ghulamhaider.com</a>
+        <img class="u-photo" src="/img/selfie.avif" alt="Ghulam Haider" hidden />
         <data class="p-org" value={schema.worksFor.name}></data>
       </div>
     </div>
@@ -448,7 +448,7 @@ import { schema } from '../../data/seo';
     pointer-events: none;
     margin-right: 2rem;
     margin-bottom: 2rem;
-    
+
     /* This is the magic - tells content to wrap around the image shape */
     shape-outside: url('/img/leo-mascot-shape.png');
     shape-margin: 1.5rem; /* Space between mascot and text */

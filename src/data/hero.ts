@@ -1,8 +1,9 @@
 export const heroTitles = [
-  'Full Stack Software Developer',
-  'Frontend Web Developer',
-  'Backend Web Developer',
-  'Jack of All Trades',
+  'Full Stack Developer',
+  'PHP Laravel Specialist',
+  'TALL Stack Expert',
+  'Backend Architect',
+  'Digital Solutions Provider',
 ] as const;
 
 export type HeroTitle = (typeof heroTitles)[number];

@@ -27,87 +27,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Parker University Web Systems',
+    title: 'ABN Global',
     description:
-      'Full-stack development for multiple university domains including Parker.edu, ParkerSeminars.com, and TheInvictaProject.org',
-    image: '/img/featured/featured-parker.avif',
-    tags: ['PHP', 'WordPress', 'Salesforce', 'Twilio'],
-    metrics: ['25% enrollment increase', '10DLC SMS campaigns'],
+      'Developed finance and billing features for a global platform, ensuring scalability and high availability. Built end-to-end billing systems for enterprise clients.',
+    image: '/img/featured/abn-global.png',
+    tags: ['Laravel', 'MySQL', 'MongoDB', 'Finance'],
+    metrics: ['Scalable Architecture', 'Global Billing System'],
+    github: null,
+    live: 'https://abnglobal.io',
+    featured: true,
+  },
+  {
+    title: 'Sellers CPanel (Dukan.pk)',
+    description:
+      "Core seller management dashboard powering Dukan.pk's e-commerce ecosystem. Integrated telecom top-ups, AI-powered KYC verification, and logistics partner APIs.",
+    image: '/img/featured/dukan-cpanel.png',
+    tags: ['PHP', 'Laravel', 'React.js', 'REST APIs', 'AI'],
+    metrics: ['AI-powered KYC', 'Digital Services Module'],
+    github: null,
+    live: 'https://sellers.dukan.pk',
+    featured: true,
+  },
+  {
+    title: 'Dlivr Onboarding',
+    description:
+      'Implemented end-to-end Visa card transactional payment workflows and courier partner integrations (TCS, Leopards) for seamless logistics.',
+    image: '/img/featured/dlivr.png',
+    tags: ['Laravel', 'Payment Gateways', 'API Integration'],
+    metrics: ['Automated Logistics', 'Payment Workflows'],
     github: null,
     live: null,
-    featured: true,
-    subProjects: [
-      {
-        title: 'Parker.edu',
-        description: 'Main university website with student portal integration',
-        image: '/img/featured/featured-parker.avif',
-        subProjects: [
-          {
-            title: 'Main University Website',
-            description: 'Primary web presence for Parker University',
-            image: '/img/featured/featured-parker.avif',
-            live: 'https://parker.edu',
-          },
-          {
-            title: 'Career Pathways',
-            description: 'Student career guidance and planning portal',
-            image: '/img/featured/featured-pathways.avif',
-            live: 'https://www.parker.edu/pathways',
-          },
-          {
-            title: 'SearchStax Search Integration',
-            description: 'Advanced search functionality across university content',
-            image: '/img/featured/featured-search.avif',
-            live: 'https://www.parker.edu/search',
-          },
-          {
-            title: 'Parker Salesforce Integration',
-            description: 'CRM integration for enrollment management',
-            image: '/img/featured/featured-app.avif',
-            live: 'https://parker.edu/application',
-          },
-        ],
-      },
-      {
-        title: 'Parker Seminars',
-        description: 'Continuing education and seminar registration platform',
-        image: '/img/featured/featured-ps.avif',
-        live: 'https://parkerseminars.com',
-      },
-      {
-        title: 'The Invicta Project',
-        description: 'Student wellness and mental health initiative',
-        image: '/img/featured/featured-invicta.avif',
-        live: 'https://theinvictaproject.org',
-      },
-      {
-        title: 'Parker Performance Institute',
-        description: 'Sports performance and athletic training center',
-        image: '/img/featured/featured-ppi.avif',
-        live: 'https://parkerperformanceinstitute.com',
-      },
-    ],
-  },
-  {
-    title: 'Roadtrip Beaver',
-    description:
-      "The #1 Buc-ee's trip planner. Find all locations, plan your route, and never miss the brisket or beaver nuggets.",
-    image: '/img/featured/featured-roadtrip.avif',
-    tags: ['React', 'TypeScript', 'Vite', 'Leaflet'],
-    metrics: ['~200 daily visitors', '~15% bounce rate'],
-    github: null,
-    live: 'https://roadtripbeaver.com',
-    featured: true,
-  },
-  {
-    title: 'Navarro County Connect',
-    description:
-      'Community hub for Corsicana and surrounding areas. Discover local restaurants, events, jobs, and services.',
-    image: '/img/featured/featured-navarro.avif',
-    tags: ['React', 'Node.js', 'SQLite', 'Tailwind CSS'],
-    metrics: ['100% white-label ready', 'Scalable architecture'],
-    github: null,
-    live: 'https://navarrocounty.com',
     featured: true,
   },
   {
@@ -119,7 +68,7 @@ export const projects: Project[] = [
     metrics: ['40% cost reduction', 'Automated workflows'],
     github: null,
     live: 'https://clancompass.com',
-    featured: true,
+    featured: false,
   },
   {
     title: 'Personal Family Organizer',

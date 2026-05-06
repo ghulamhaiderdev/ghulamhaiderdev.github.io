@@ -1,35 +1,35 @@
 export const profile = {
-  name: 'Leo Ashcraft',
-  title: 'Full Stack Software Developer',
-  location: 'Dallas-Fort Worth, TX',
-  tagline: 'I Cultivate Digital Excellence',
+  name: "Ghulam Haider",
+  title: "Full Stack Developer",
+  location: "Lahore, Pakistan",
+  tagline: "I Cultivate Digital Excellence",
   description:
-    'Full Stack Software Developer with 17+ years of IT experience, specializing in clean, maintainable PHP and JavaScript code. Currently developing solutions at Parker University.',
-  bio: `I'm Leo Ashcraft, a full-stack software developer with 5+ years of professional experience and 17+ years in tech. I specialize in clean, maintainable code and performance-driven web experiences, with a strong focus on smooth animations, intuitive UI/UX, SEO, Core Web Vitals, and AI search visibility. Currently, I work at Parker University in Dallas, TX, building fast, polished digital solutions that turn ideas into reality.`,
+    "Full Stack Developer with 3+ years of experience building scalable web applications using Laravel, PHP, MySQL, and React.js.",
+  bio: `Full Stack Developer with 3+ years of experience building scalable web applications using Laravel, PHP, MySQL, and React.js. Proven track record in designing REST APIs. Strong expertise in backend architecture, database optimization, and third-party API integrations. Currently driving Finance & Invoicing solutions at Rozee.pk, with a focus on clean code and operational efficiency.`,
 
-  availability: ['Open to freelance'],
+  availability: ["Open to freelance", "Open to full-time"],
 
   // Obfuscated contact info (reversed for spam protection)
   contact: {
-    phone: { area: ')309(', number: '2874-836' },
-    email: { user: 'oel', website: 'hcet.tfarchsa' },
+    whatsapp: { area: "29+", number: "3156325203" }, // +92 3025236513
+    phone: { area: "29+", number: "324642471" },    // +92 174246423
+    email: { user: "280rediahmaluhg", website: "moc.liamg" },
   },
 
   social: {
-    linkedin: 'https://linkedin.com/in/leo3',
-    github: 'https://github.com/leoashcraft',
+    linkedin: "https://linkedin.com/in/ghulamhaider",
+    github: "https://github.com/ghulamhaiderdev",
   },
 
   stats: [
-    { value: 17, suffix: '+', label: 'Years Tech Experience' },
-    { value: 5, suffix: '+', label: 'Years Development' },
-    { value: 6, suffix: '+', label: 'Years Managerial' },
-    { value: 33, suffix: '+', label: 'Products Launched' },
+    { value: 3, suffix: "+", label: "Years Tech Experience" },
+    { value: 3, suffix: "+", label: "Years Development" },
+    { value: 8, suffix: "+", label: "Projects Completed" },
   ],
 
-  resumeUrl: '/Ashcraft-Leo-Resume.pdf',
-  photoUrl: '/img/Untitled-3.png',
-  avatarUrl: '/img/pic.webp',
+  resumeUrl: "https://drive.google.com/file/d/1cdOKI8Wzsy9lPdV8mqFfd_b35ZnC7Tti/view?usp=drive_link", // Add your Google Drive link here (e.g., "https://drive.google.com/file/d/...")
+  photoUrl: "/img/profile-img.jpeg",
+  avatarUrl: "/img/profile-img.jpeg",
 } as const;
 
 export type Profile = typeof profile;

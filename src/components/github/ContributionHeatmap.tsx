@@ -164,7 +164,7 @@ export default function ContributionHeatmap({ data }: ContributionHeatmapProps) 
             </span>
           </div>
           <a
-            href="https://github.com/leoashcraft"
+            href="https://github.com/ghulamhaiderdev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-gray-400 hover:text-neon-cyan transition-colors"

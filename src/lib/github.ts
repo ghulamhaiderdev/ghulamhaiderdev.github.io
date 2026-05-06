@@ -1,5 +1,5 @@
 // GitHub API utilities
-const GITHUB_USERNAME = 'leoashcraft';
+const GITHUB_USERNAME = 'ghulamhaiderdev';
 
 export interface GitHubRepo {
   name: string;
@@ -29,9 +29,9 @@ export interface GitHubStats {
 
 // Specific repos to display
 const FEATURED_REPOS = [
-  'Portfolio',
-  'Dawn-of-the-Devs',
-  'Now-Then-Begin',
+  'laravel-admin-apis',
+  'laravel-online-shop',
+  'nextjs-dashboard',
 ];
 
 // Fetch public repos (no token needed for public data)

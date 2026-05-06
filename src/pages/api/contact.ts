@@ -125,51 +125,63 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 }
 
 async function sendEmail(data: ContactFormData): Promise<boolean> {
-  const mailtrapToken = import.meta.env.MAILTRAP_TOKEN;
-  const toEmail = import.meta.env.CONTACT_EMAIL || 'hello@ashcraft.tech';
+  const resendApiKey = import.meta.env.RESEND_API_KEY;
+  const toEmail = import.meta.env.CONTACT_EMAIL || 'ghulamhaider@example.com'; // Your email
 
-  if (!mailtrapToken) {
-    console.warn('Mailtrap token not configured');
-    // In development, just log the message
-    console.log('Contact form submission:', data);
+  if (!resendApiKey) {
+    console.warn('Resend API Key not configured');
+    console.log('Contact form submission (Dev Mode):', data);
     return true;
   }
 
   try {
-    const response = await fetch('https://send.api.mailtrap.io/api/send', {
+    // 1. Send notification to YOU
+    const notificationResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${mailtrapToken}`,
+        Authorization: `Bearer ${resendApiKey}`,
       },
       body: JSON.stringify({
-        from: {
-          email: 'noreply@ashcraft.tech',
-          name: 'Portfolio Contact Form',
-        },
-        to: [{ email: toEmail }],
-        subject: `[Portfolio] ${data.subject}`,
+        from: 'Portfolio <onboarding@resend.dev>', // Use this sender for testing
+        to: toEmail,
+        subject: `New Message: ${data.subject}`,
         html: `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>From:</strong> ${escapeHtml(data.name)} (${escapeHtml(data.email)})</p>
-          <p><strong>Subject:</strong> ${escapeHtml(data.subject)}</p>
-          <hr />
-          <p><strong>Message:</strong></p>
-          <p>${escapeHtml(data.message).replace(/\n/g, '<br>')}</p>
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+            <h2 style="color: #333;">New Contact Form Submission</h2>
+            <p><strong>From:</strong> ${escapeHtml(data.name)} (${escapeHtml(data.email)})</p>
+            <p><strong>Subject:</strong> ${escapeHtml(data.subject)}</p>
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
+            <p style="white-space: pre-wrap; color: #555;">${escapeHtml(data.message)}</p>
+          </div>
         `,
-        text: `
-New Contact Form Submission
-
-From: ${data.name} (${data.email})
-Subject: ${data.subject}
-
-Message:
-${data.message}
-        `.trim(),
       }),
     });
 
-    return response.ok;
+    // 2. Send confirmation to the SENDER (optional but professional)
+    await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${resendApiKey}`,
+      },
+      body: JSON.stringify({
+        from: 'Ghulam Haider <onboarding@resend.dev>',
+        to: data.email,
+        subject: 'Thank you for reaching out!',
+        html: `
+          <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px;">
+            <h2>Hi ${escapeHtml(data.name)},</h2>
+            <p>Thanks for getting in touch! I've received your message regarding "<strong>${escapeHtml(data.subject)}</strong>".</p>
+            <p>I'll review it and get back to you as soon as possible.</p>
+            <br />
+            <p>Best Regards,<br /><strong>Ghulam Haider</strong></p>
+          </div>
+        `,
+      }),
+    });
+
+    return notificationResponse.ok;
   } catch (error) {
     console.error('Failed to send email:', error);
     return false;

@@ -21,7 +21,7 @@ Type 'help' to see available commands.
 
 const ASCII_ART_MOBILE = `
 ╭──────────────────────╮
-│   LEO ASHCRAFT       │
+│   GHULAM HAIDER       │
 │   Full Stack Dev     │
 ╰──────────────────────╯
 
@@ -203,7 +203,7 @@ Or scroll down to use the contact form!
 Opening resume in new tab...
 (If popup blocked, visit: ${profile.resumeUrl})
 
-[Downloading Ashcraft-Leo-Resume.pdf]
+[Downloading Ghulam-Haider-Resume.pdf]
 `,
 
   social: () => `
@@ -356,7 +356,7 @@ Currently exploring: Astro, Three.js, AI/ML integrations
 ║                  GITHUB REPOSITORIES                         ║
 ╚══════════════════════════════════════════════════════════════╝
 
-🔗 github.com/leoashcraft
+🔗 github.com/ghulamhaiderdev
 
 Featured Repos:
   📁 Portfolio          This website! Astro + Three.js + React
@@ -374,14 +374,14 @@ Visit: ${profile.social.github}
 Opening resume in new tab...
 (If popup blocked, visit: ${profile.resumeUrl})
 
-[Downloading Ashcraft-Leo-Resume.pdf]
+[Downloading Ghulam-Haider-Resume.pdf]
 `,
 
   neofetch: () => `
-        .--.          leo@portfolio
+        .--.          ghulam@portfolio
        |o_o |         ──────────────
        |:_/ |         OS: macOS (brain runs on coffee)
-      //   \\ \\        Host: Dallas-Fort Worth, TX
+      //   \\ \\        Host: Lahore, Pakistan
      (|     | )       Kernel: ${profile.stats[0].value}+ years experience
     /'\\_   _/\`\\       Uptime: Since 2009
     \\___)=(___/       Packages: ${technologies.length} technologies
@@ -438,7 +438,7 @@ drwxr-xr-x  .secrets/        <- Nice try 👀
   'ls -a': () => commands.ls(),
   dir: () => commands.ls(),
 
-  pwd: () => `/home/leo/portfolio
+  pwd: () => `/home/ghulam/portfolio
 (You are here! 🏠)`,
 
   cd: () => `bash: cd: nowhere to go, you're already at the best place!`,
@@ -447,7 +447,7 @@ drwxr-xr-x  .secrets/        <- Nice try 👀
 Try: cat readme.md | cat resume.pdf | cat secrets.txt`,
 
   'cat readme.md': () => `
-# Leo Ashcraft's Portfolio
+# Ghulam Haider's Portfolio
 
 Welcome! This is my interactive terminal portfolio.
 
@@ -465,7 +465,7 @@ Built with: Astro, React, Three.js, TypeScript, and ☕
 The secret is: there is no secret. Just hard work and coffee.`,
 
   'cat /etc/passwd': () => `root:x:0:0:root:/root:/bin/bash
-leo:x:1000:1000:Leo Ashcraft,,,:/home/leo:/bin/zsh
+ghulam:x:1000:1000:Ghulam Haider,,,:/home/ghulam:/bin/zsh
 coffee:x:1001:1001:Essential Service:/dev/null:/bin/espresso
 
 Just kidding. This is a portfolio, not a server! 😄`,
@@ -483,11 +483,11 @@ Actually, I've been coding for ${profile.stats[0].value}+ years. That's the real
 
   top: () => `
   PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
- 1337 leo       20   0  420.0m  69.0m  42.0m S  99.9  13.37  9001:00 coding
- 1338 leo       20   0  256.0m  64.0m  32.0m S  42.0   8.00   420:00 debugging
- 1339 leo       20   0  128.0m  32.0m  16.0m S  25.0   4.00   180:00 coffee
- 1340 leo       20   0   64.0m  16.0m   8.0m S  10.0   2.00    60:00 meetings
- 1341 leo       20   0   32.0m   8.0m   4.0m S   5.0   1.00    30:00 stackoverflow
+ 1337 ghulam       20   0  420.0m  69.0m  42.0m S  99.9  13.37  9001:00 coding
+ 1338 ghulam       20   0  256.0m  64.0m  32.0m S  42.0   8.00   420:00 debugging
+ 1339 ghulam       20   0  128.0m  32.0m  16.0m S  25.0   4.00   180:00 coffee
+ 1340 ghulam       20   0   64.0m  16.0m   8.0m S  10.0   2.00    60:00 meetings
+ 1341 ghulam       20   0   32.0m   8.0m   4.0m S   5.0   1.00    30:00 stackoverflow
 
 Press 'q' to quit... just kidding, this isn't real top 😄
 `,
@@ -508,7 +508,7 @@ Spoiler: This portfolio doesn't actually have network access 🌐
 `,
 
   curl: () => `
-curl: try 'curl https://ashcraft.tech' to visit my site!
+curl: try 'curl https://ghulamhaider.dev' to visit my site!
 Or just scroll around - you're already here! 🎉
 `,
 
@@ -543,19 +543,19 @@ Untracked files:
 
   'git log': () => `
 commit 7h1s1s4h4sh (HEAD -> main, origin/main)
-Author: Leo Ashcraft <leo@ashcraft.tech>
+Author: Ghulam Haider <ghulam@ashcraft.tech>
 Date:   ${new Date().toDateString()}
 
     Made everything awesome ✨
 
 commit c0ff33c0d3
-Author: Leo Ashcraft <leo@ashcraft.tech>
+Author: Ghulam Haider <ghulam@ashcraft.tech>
 Date:   Yesterday
 
     Fixed bugs, added features, drank coffee
 
 commit d34db33f
-Author: Leo Ashcraft <leo@ashcraft.tech>
+Author: Ghulam Haider <ghulam@ashcraft.tech>
 Date:   Last week
 
     Initial commit (it worked on my machine)
@@ -582,7 +582,7 @@ added 420 packages, removed 69 vulnerabilities
    │                                          │
    │   Successfully installed dependencies!   │
    │                                          │
-   │   Now run: npm run hire-leo              │
+   │   Now run: npm run hire-ghulam              │
    │                                          │
    ╰──────────────────────────────────────────╯
 `,
@@ -602,21 +602,21 @@ added 420 packages, removed 69 vulnerabilities
 
 ✓ Built in 4.20s
 ✓ 69 pages generated
-✓ 0 errors (because Leo writes clean code)
+✓ 0 errors (because Ghulam writes clean code)
 `,
 
   man: () => `
 What manual page do you want?
 
 Try:
-  man leo        - Learn about me
+  man ghulam        - Learn about me
   man portfolio  - About this site
   man life       - The meaning of it all
 `,
 
-  'man leo': () => commands.about(),
+  'man ghulam': () => commands.about(),
   'man portfolio': () => `
-PORTFOLIO(1)              Leo's Documentation              PORTFOLIO(1)
+PORTFOLIO(1)              Ghulam's Documentation              PORTFOLIO(1)
 
 NAME
        portfolio - An interactive developer portfolio
@@ -630,7 +630,7 @@ DESCRIPTION
        (you're using it!), 3D animations, and actual useful content.
 
 AUTHOR
-       Written by Leo Ashcraft with assistance from AI and caffeine.
+       Written by Ghulam Haider with assistance from AI and caffeine.
 
 SEE ALSO
        about(1), skills(1), projects(1), contact(1)
@@ -702,12 +702,12 @@ Type 'stay' to remain or just close the tab (but please don't).
 
   echo: () => `echo what? Try: echo hello`,
   'echo hello': () => `hello`,
-  'echo $PATH': () => `/usr/local/bin:/usr/bin:/bin:/home/leo/scripts:/road/to/success`,
-  'echo $HOME': () => `/home/leo (but Dallas-Fort Worth IRL 🏠)`,
+  'echo $PATH': () => `/usr/local/bin:/usr/bin:/bin:/home/ghulam/scripts:/road/to/success`,
+  'echo $HOME': () => `/home/ghulam (but Lahore, Pakistan IRL 🏠)`,
 
   cowsay: () => `
  _______________________________________
-< Hire Leo! He's mass cool. >
+< Hire Ghulam! He's mass cool. >
  ---------------------------------------
         \\   ^__^
          \\  (oo)\\_______
@@ -752,10 +752,10 @@ Type 'help' for available commands.`,
   grep: () => `Usage: grep <pattern>
 Try: grep skills | grep awesome | grep hire`,
   'grep skills': () => commands.skills(),
-  'grep awesome': () => `Found 420 instances of 'awesome' in Leo's portfolio.`,
+  'grep awesome': () => `Found 420 instances of 'awesome' in Ghulam's portfolio.`,
   'grep hire': () => `Found 1 perfect candidate. Type 'contact' to proceed.`,
 
-  whoami: () => `You are a visitor exploring Leo Ashcraft's portfolio.
+  whoami: () => `You are a visitor exploring Ghulam Haider's portfolio.
 Or are you a recruiter? A potential collaborator?
 Either way, welcome! 👋`,
 
@@ -773,7 +773,7 @@ Just kidding! But nice try getting root access. 🔒`,
 
   brew: () => `
 ==> Formulae
-leo-ashcraft ✓ (installed, great choice!)
+ghulam-haider ✓ (installed, great choice!)
 coffee        ✓ (essential dependency)
 creativity    ✓ (auto-updated daily)
 
@@ -784,11 +784,11 @@ Already up-to-date. ☕
 Reading package lists... Done
 Building dependency tree... Done
 The following NEW packages will be installed:
-  leo-ashcraft-developer (1.0.0)
+  ghulam-haider-developer (1.0.0)
 
 Do you want to continue? [Y/n] Y
 
-Setting up leo-ashcraft-developer... Done!
+Setting up ghulam-haider-developer... Done!
 Type 'contact' to initialize.
 `,
 
@@ -797,8 +797,8 @@ Type 'contact' to initialize.
 
   python: () => `
 Python 3.11.0 (main, Oct 24 2022, 00:00:00)
->>> print("Hello from Leo's portfolio!")
-Hello from Leo's portfolio!
+>>> print("Hello from Ghulam's portfolio!")
+Hello from Ghulam's portfolio!
 >>> exit()
 
 (Not a real Python shell, but I do know Python! 🐍)
@@ -806,8 +806,8 @@ Hello from Leo's portfolio!
 
   node: () => `
 Welcome to Node.js v20.0.0.
-> console.log("Leo is awesome");
-Leo is awesome
+> console.log("Ghulam is awesome");
+Ghulam is awesome
 undefined
 > process.exit()
 
@@ -816,9 +816,9 @@ undefined
 
   docker: () => `
 CONTAINER ID   IMAGE              STATUS          NAMES
-a1b2c3d4e5f6   leo/portfolio      Up 15 years     career
-b2c3d4e5f6g7   leo/skills         Up 15 years     expertise
-c3d4e5f6g7h8   leo/creativity     Always running  innovation
+a1b2c3d4e5f6   ghulam/portfolio      Up 15 years     career
+b2c3d4e5f6g7   ghulam/skills         Up 15 years     expertise
+c3d4e5f6g7h8   ghulam/creativity     Always running  innovation
 
 All systems operational! 🐳
 `,
@@ -836,7 +836,7 @@ Try: make coffee | make money | make sense
   'make sense': () => `🧠 Compiling... Warning: Life rarely makes sense. Continuing anyway.`,
 
   weather: () => `
-Current weather in Dallas-Fort Worth, TX:
+Current weather in Lahore, Pakistan:
 
   ☀️  Sunny  (probably)
   🌡️  Hot    (it's Texas)
@@ -850,10 +850,10 @@ Forecast: 100% chance of great code being written.
 
   lsof: () => `
 COMMAND   PID   USER   FD   TYPE   NAME
-vscode    420   leo    cwd  DIR    /projects
-chrome    421   leo    cwd  DIR    /stackoverflow
-spotify   422   leo    cwd  DIR    /focus-music
-slack     423   leo    cwd  DIR    /procrastination
+vscode    420   ghulam    cwd  DIR    /projects
+chrome    421   ghulam    cwd  DIR    /stackoverflow
+spotify   422   ghulam    cwd  DIR    /focus-music
+slack     423   ghulam    cwd  DIR    /procrastination
 
 (All the tools of a modern developer)
 `,
@@ -875,13 +875,13 @@ Swap:       8388608           0     8388608
 Translation: Brain memory is fine, but could always use more coffee.
 `,
 
-  uname: () => `Darwin Leo-MacBook-Pro 23.0.0 Darwin Kernel Version 23.0.0 arm64`,
+  uname: () => `Darwin Ghulam-MacBook-Pro 23.0.0 Darwin Kernel Version 23.0.0 arm64`,
   'uname -a': () => commands.uname(),
 
-  hostname: () => `leo-portfolio.local`,
+  hostname: () => `ghulam-portfolio.local`,
 
-  which: () => `Usage: which <command>\nTry: which leo`,
-  'which leo': () => `/usr/local/bin/awesome-developer`,
+  which: () => `Usage: which <command>\nTry: which ghulam`,
+  'which ghulam': () => `/usr/local/bin/awesome-developer`,
   'which coffee': () => `/dev/essential`,
 
   alias: () => `
@@ -898,7 +898,7 @@ alias hire='contact'
 y
 y
 y
-(yes, Leo is hireable. Type 'contact')`,
+(yes, Ghulam is hireable. Type 'contact')`,
 
   no: () => `no? But you haven't even seen my projects yet! Type 'projects' first.`,
 
@@ -922,7 +922,7 @@ y
 (This portfolio doesn't support shortcuts - explore it all!)`,
 
   less: () => `
-:: Leo's Portfolio (press q to quit, j/k to scroll) ::
+:: Ghulam's Portfolio (press q to quit, j/k to scroll) ::
 
 Just kidding - scroll works normally here!
 Type 'about' to learn more about me.`,
@@ -930,7 +930,7 @@ Type 'about' to learn more about me.`,
   more: () => commands.less(),
 
   tar: () => `
-tar: extracting leo-portfolio.tar.gz...
+tar: extracting ghulam-portfolio.tar.gz...
 x about/
 x skills/
 x experience/
@@ -944,7 +944,7 @@ Done! All content extracted. Type 'help' to explore.`,
 
   head: () => `
 ==> portfolio.txt <==
-Leo Ashcraft
+Ghulam Haider
 Full Stack Developer
 17+ years of experience
 ...
@@ -979,7 +979,7 @@ diff --git a/junior-dev.txt b/senior-dev.txt
 
 Type 'experience' to see my growth!`,
 
-  cmp: () => `cmp: leo.txt and awesome-developer.txt are identical`,
+  cmp: () => `cmp: ghulam.txt and awesome-developer.txt are identical`,
 
   comm: () => `
 Common skills across all my jobs:
@@ -989,7 +989,7 @@ Common skills across all my jobs:
   Learning New Things`,
 
   sort: () => `
-Sorting Leo's priorities...
+Sorting Ghulam's priorities...
 1. Quality Code
 2. User Experience
 3. Team Collaboration
@@ -998,7 +998,7 @@ Sorting Leo's priorities...
 
   export: () => `
 export PATH=$PATH:/road/to/success
-export DEVELOPER="Leo Ashcraft"
+export DEVELOPER="Ghulam Haider"
 export COFFEE_LEVEL="maximum"
 export HIRE_ME="yes please"
 
@@ -1009,10 +1009,10 @@ Environment configured for success! 🚀`,
   adding: experience.txt (deflated 0% - years of learning)
   adding: projects.txt (deflated 0% - quality work)
 
-Created: leo-ashcraft-portfolio.zip`,
+Created: ghulam-haider-portfolio.zip`,
 
   unzip: () => `
-Archive:  leo-ashcraft-portfolio.zip
+Archive:  ghulam-haider-portfolio.zip
   inflating: skills.txt
   inflating: experience.txt
   inflating: projects.txt
@@ -1022,7 +1022,7 @@ Archive:  leo-ashcraft-portfolio.zip
 Done! Type 'help' to explore contents.`,
 
   service: () => `
-● portfolio.service - Leo's Portfolio Service
+● portfolio.service - Ghulam's Portfolio Service
      Loaded: loaded (/etc/systemd/system/portfolio.service; enabled)
      Active: active (running) since forever
    Main PID: 1337 (node)
@@ -1076,11 +1076,11 @@ Firewall protecting quality code! 🛡️`,
  extra is up to date
  community is up to date
 
-:: leo-ashcraft is up to date. No upgrade needed.
+:: ghulam-haider is up to date. No upgrade needed.
    (Already running latest version of awesome)`,
 
   rpm: () => `
-leo-ashcraft-1.0.0-1.x86_64
+ghulam-haider-1.0.0-1.x86_64
   Installed: Yes
   Size: Immeasurable talent
   Summary: Full Stack Developer
@@ -1099,7 +1099,7 @@ leo-ashcraft-1.0.0-1.x86_64
  20 21 22 23 24 25 26
  27 28 29 30 31
 
-Best day to hire Leo: TODAY ⭐`;
+Best day to hire Ghulam: TODAY ⭐`;
   },
 
   dd: () => `
@@ -1111,16 +1111,16 @@ dd: creating bootable career...
 Career successfully written to /dev/success! 🚀`,
 
   whereis: () => `
-whereis leo
-leo: /home/dallas-fort-worth /usr/local/bin/developer /career/success`,
+whereis ghulam
+ghulam: /home/dallas-fort-worth /usr/local/bin/developer /career/success`,
 
-  'whereis leo': () => commands.whereis(),
+  'whereis ghulam': () => commands.whereis(),
 
   whatis: () => `
-whatis leo
-leo (1)              - Full Stack Developer, problem solver, coffee enthusiast`,
+whatis ghulam
+ghulam (1)              - Full Stack Developer, problem solver, coffee enthusiast`,
 
-  'whatis leo': () => commands.whatis(),
+  'whatis ghulam': () => commands.whatis(),
 
   useradd: () => `useradd: cannot create user: This is a portfolio, not a server!
 But I can add YOU to my network - type 'contact'!`,
@@ -1128,13 +1128,13 @@ But I can add YOU to my network - type 'contact'!`,
   usermod: () => `usermod: modifying user 'visitor' to 'potential-employer'... Done!`,
 
   passwd: () => `
-Changing password for user leo.
+Changing password for user ghulam.
 Current password: ********
 New password: ********
 Retype new password: ********
 passwd: password updated successfully
 
-(The secret password is: "hire-leo" 🤫)`,
+(The secret password is: "hire-ghulam" 🤫)`,
 
   mv: () => `mv: cannot move files in a portfolio
 (But I can move mountains with code!)`,
@@ -1142,8 +1142,8 @@ passwd: password updated successfully
   cp: () => `cp: cannot copy portfolio - it's one of a kind! ✨`,
 
   env: () => `
-USER=leo
-HOME=/home/leo
+USER=ghulam
+HOME=/home/ghulam
 SHELL=/bin/zsh
 EDITOR=code
 COFFEE=essential
@@ -1152,9 +1152,9 @@ MOOD=caffeinated`,
 
   printenv: () => commands.env(),
 
-  id: () => `uid=1337(leo) gid=1337(developers) groups=1337(developers),420(coffee-lovers),69(nice)`,
+  id: () => `uid=1337(ghulam) gid=1337(developers) groups=1337(developers),420(coffee-lovers),69(nice)`,
 
-  groups: () => `leo : developers coffee-lovers nice problem-solvers`,
+  groups: () => `ghulam : developers coffee-lovers nice problem-solvers`,
 
   clear: () => 'CLEAR',
 };
@@ -1348,28 +1348,28 @@ export default function InteractiveTerminal() {
 
   const runShutdownAnimation = () => {
     const frames = [
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!`,
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!
 
   [    ] Stopping services...`,
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!
 
   [ OK ] Stopping services...
   [    ] Saving session data...`,
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!
 
   [ OK ] Stopping services...
   [ OK ] Saving session data...
   [    ] Unmounting filesystems...`,
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!
 
@@ -1377,7 +1377,7 @@ export default function InteractiveTerminal() {
   [ OK ] Saving session data...
   [ OK ] Unmounting filesystems...
   [    ] Powering off...`,
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for shutdown NOW!
 
@@ -1417,7 +1417,7 @@ export default function InteractiveTerminal() {
 
   const runRestartAnimation = () => {
     const frames = [
-      `Broadcast message from leo@portfolio:
+      `Broadcast message from ghulam@portfolio:
 
   The system is going down for reboot NOW!`,
       `  [ OK ] Stopping services...
@@ -1479,12 +1479,12 @@ export default function InteractiveTerminal() {
   const runNpmDevAnimation = () => {
     const frames = [
       `
-> leo-portfolio@1.0.0 dev
+> ghulam-portfolio@1.0.0 dev
 > next dev
 
   ▲ Next.js 14.0.0`,
       `
-> leo-portfolio@1.0.0 dev
+> ghulam-portfolio@1.0.0 dev
 > next dev
 
   ▲ Next.js 14.0.0
@@ -1492,7 +1492,7 @@ export default function InteractiveTerminal() {
 
   ✓ Ready in 420ms`,
       `
-> leo-portfolio@1.0.0 dev
+> ghulam-portfolio@1.0.0 dev
 > next dev
 
   ▲ Next.js 14.0.0
@@ -1501,7 +1501,7 @@ export default function InteractiveTerminal() {
   ✓ Ready in 420ms
   ○ Compiling / ...`,
       `
-> leo-portfolio@1.0.0 dev
+> ghulam-portfolio@1.0.0 dev
 > next dev
 
   ▲ Next.js 14.0.0
@@ -1510,7 +1510,7 @@ export default function InteractiveTerminal() {
   ✓ Ready in 420ms
   ✓ Compiled / in 1337ms`,
       `
-> leo-portfolio@1.0.0 dev
+> ghulam-portfolio@1.0.0 dev
 > next dev
 
   ▲ Next.js 14.0.0
@@ -1760,7 +1760,7 @@ export default function InteractiveTerminal() {
           onClick={(e) => { e.stopPropagation(); handleMaximize(); }}
         />
         <span className="ml-4 text-gray-400 text-sm font-mono">
-          leo@portfolio ~ {windowState === 'maximized' && '(fullscreen)'}{windowState === 'minimized' && '(minimized - click yellow to restore)'}
+          ghulam@portfolio ~ {windowState === 'maximized' && '(fullscreen)'}{windowState === 'minimized' && '(minimized - click yellow to restore)'}
         </span>
       </div>
 

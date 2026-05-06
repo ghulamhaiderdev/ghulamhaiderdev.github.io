@@ -12,11 +12,19 @@ export function unscrambleEmail(profile: Profile): string {
 
 /**
  * Unscrambles the phone number from the profile data
- * Phone is stored reversed for basic spam protection
  */
 export function unscramblePhone(profile: Profile): string {
   const area = profile.contact.phone.area.split('').reverse().join('');
   const number = profile.contact.phone.number.split('').reverse().join('');
+  return `${area} ${number}`;
+}
+
+/**
+ * Unscrambles the WhatsApp number from the profile data
+ */
+export function unscrambleWhatsapp(profile: Profile): string {
+  const area = profile.contact.whatsapp.area.split('').reverse().join('');
+  const number = profile.contact.whatsapp.number.split('').reverse().join('');
   return `${area} ${number}`;
 }
 
@@ -33,4 +41,13 @@ export function getMailtoLink(profile: Profile): string {
 export function getTelLink(profile: Profile): string {
   const phone = unscramblePhone(profile);
   return `tel:${phone.replace(/\s/g, '')}`;
+}
+
+/**
+ * Returns WhatsApp link
+ */
+export function getWhatsappLink(profile: Profile): string {
+  const whatsapp = unscrambleWhatsapp(profile);
+  const cleanNumber = whatsapp.replace(/\s/g, '').replace('+', '');
+  return `https://wa.me/${cleanNumber}`;
 }

@@ -7,6 +7,7 @@ interface ImportMetaEnv {
   readonly MAILTRAP_TOKEN: string;
   readonly CONTACT_EMAIL: string;
   readonly GITHUB_TOKEN: string;
+  readonly APP_URL: string;
 }
 
 interface ImportMeta {
