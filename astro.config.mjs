@@ -1,27 +1,28 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import tailwindcss from '@tailwindcss/vite';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
-import compress from 'astro-compress';
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwindcss from "@tailwindcss/vite";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+import node from "@astrojs/node";
+import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ghulamhaiderdev.github.io',
-  output: 'static',
+  site: "https://ghulamhaiderdev.github.io",
+  output: "static",
   adapter: node({
-    mode: 'standalone',
+    mode: "standalone",
   }),
   server: {
-    host: '0.0.0.0',
-    port: parseInt(process.env.PORT || '4321'),
+    host: "0.0.0.0",
+    port: parseInt(process.env.PORT || "4321"),
   },
   integrations: [
     react(),
     mdx(),
     sitemap(),
+
     compress({
       CSS: true,
       HTML: true,
@@ -34,6 +35,6 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   image: {
-    domains: ['github.com', 'avatars.githubusercontent.com'],
+    domains: ["github.com", "avatars.githubusercontent.com"],
   },
 });
