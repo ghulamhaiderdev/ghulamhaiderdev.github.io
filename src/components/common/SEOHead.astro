@@ -19,7 +19,7 @@ interface Props {
 const {
   title,
   description = profile.description,
-  image = '/img/pic.webp',
+  image = profile.photoUrl,
   type = 'website',
   publishedTime,
   modifiedTime,
@@ -27,13 +27,13 @@ const {
   noindex = false,
 } = Astro.props;
 
-const pageTitle = title ? `Leo Ashcraft | ${title}` : seo.siteTitle;
+const pageTitle = title ? `${profile.name} | ${title}` : seo.siteTitle;
 const metaDescription = description || seo.siteDescription;
 const umamiWebsiteId = import.meta.env.UMAMI_WEBSITE_ID;
 const umamiScriptUrl = import.meta.env.UMAMI_SCRIPT_URL;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const imageURL = new URL(image, Astro.site);
-const siteUrl = Astro.site?.href || 'https://leoashcraft.com';
+const siteUrl = Astro.site?.href || 'https://ghulamhaiderdev.github.io';
 
 // Helper to create ISO date from YYYY-MM format
 const toISODate = (dateStr: string) => {
@@ -97,7 +97,7 @@ const personSchema = {
   name: profile.name,
   url: siteUrl,
   image: new URL(profile.photoUrl, Astro.site).href,
-  description: 'Full-stack software developer with 5+ years of development experience and 17+ years in technology. Specializes in PHP, React, and Salesforce integrations. Based in Dallas–Fort Worth.',
+  description: profile.bio,
   jobTitle: schema.jobTitle,
   address: {
     '@type': schema.address.type,
@@ -137,7 +137,7 @@ const portfolioSchema = {
   '@type': 'ItemList',
   '@id': `${siteUrl}#portfolio`,
   name: 'Portfolio Projects',
-  description: 'Software development projects by Leo Ashcraft',
+  description: `Software development projects by ${profile.name}`,
   numberOfItems: projects.length,
   itemListElement: projects.map((project, index) => ({
     '@type': 'ListItem',
@@ -166,7 +166,7 @@ const servicesSchema = {
   '@type': 'ItemList',
   '@id': `${siteUrl}#services`,
   name: 'Professional Services',
-  description: 'Software development services offered by Leo Ashcraft',
+  description: `Software development services offered by ${profile.name}`,
   numberOfItems: services.length,
   itemListElement: services.map((service, index) => ({
     '@type': 'ListItem',
@@ -263,7 +263,7 @@ const schemas = [
 <link rel="icon" type="image/svg+xml" href="/img/favicons/favicon.svg" />
 <link rel="shortcut icon" href="/img/favicons/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="Leo" />
+<meta name="apple-mobile-web-app-title" content="Ghulam" />
 <link rel="manifest" href="/img/favicons/site.webmanifest" />
 <meta name="theme-color" content="#0a0a0f" />
 

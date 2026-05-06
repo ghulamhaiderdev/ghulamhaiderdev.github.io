@@ -6,7 +6,7 @@ import ExternalLinkModal from '../components/common/ExternalLinkModal.astro';
 ---
 
 <BaseLayout
-  title="Interview - Leo Ashcraft"
+  title={`Interview - ${profile.name}`}
   description="A Q&A about building my developer portfolio - the skills, challenges, inspiration, and lessons learned along the way."
 >
   <section class="relative min-h-screen py-24 px-4 overflow-hidden">
@@ -31,7 +31,7 @@ import ExternalLinkModal from '../components/common/ExternalLinkModal.astro';
           <span class="gradient-text">Interview</span>
         </h1>
         <p class="text-gray-400 text-sm">
-          Updated February 4, 2026
+          Updated May 6, 2026
         </p>
       </header>
 
@@ -70,7 +70,7 @@ import ExternalLinkModal from '../components/common/ExternalLinkModal.astro';
             How I Built My Portfolio
           </h2>
           <p class="text-gray-300 leading-relaxed">
-            Built with Astro 5 and Tailwind CSS 4, using React islands for interactive pieces like the contact form and GitHub contribution heatmap. TypeScript throughout. I used Sharp for AVIF/WebP image optimization and built a custom horizontal scroll system using CSS sticky positioning and JavaScript-driven transforms - no heavy animation libraries needed. The hero section uses a CSS shape-outside float with a silhouette PNG so text content wraps naturally around the mascot illustration rather than sitting in rigid columns. Navigation is enhanced with spacebar keyboard shortcuts - pressing space snaps you through sections and horizontal scroll panels, making the site feel like a presentation. On mobile, touch swipe gestures let you navigate between panels with scroll-preview feedback showing movement before the snap. I also built in optional sound effects tied to UI interactions - button hovers, theme toggles, and section transitions - with a user-controlled toggle to keep it accessible. SEO is handled with JSON-LD structured data, Open Graph, and IndieWeb microformats. Deployed on Railway with gzip compression middleware. The data layer is fully separated so content changes never touch markup.
+            Built with Astro 5 and Tailwind CSS 4, using React islands for interactive pieces like the contact form and GitHub contribution heatmap. TypeScript throughout. I used Sharp for AVIF/WebP image optimization and built a custom horizontal scroll system using CSS sticky positioning and JavaScript-driven transforms - no heavy animation libraries needed. The hero section uses a CSS shape-outside float with a silhouette image so text content wraps naturally around the profile image rather than sitting in rigid columns. Navigation is enhanced with spacebar keyboard shortcuts - pressing space snaps you through sections and horizontal scroll panels, making the site feel like a presentation. On mobile, touch swipe gestures let you navigate between panels with scroll-preview feedback showing movement before the snap. I also built in optional sound effects tied to UI interactions - button hovers, theme toggles, and section transitions - with a user-controlled toggle to keep it accessible. SEO is handled with JSON-LD structured data, Open Graph, and IndieWeb microformats. Deployed on GitHub Pages with automated CI/CD via GitHub Actions. The data layer is fully separated so content changes never touch markup.
           </p>
         </article>
 
