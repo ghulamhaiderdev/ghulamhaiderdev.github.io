@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-export const prerender = false;
+export const prerender = true;
 
 // ── Rate Limiting ─────────────────────────────────────────────────────
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
