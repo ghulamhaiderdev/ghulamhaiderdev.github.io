@@ -203,8 +203,8 @@ import { schema } from '../../data/seo';
     <div class="hero-mobile md:hidden">
       <!-- Mascot behind content on mobile -->
       <img
-        src={profile.photoUrl}
-        alt="Hyper-realistic Portrait of Ghulam Haider"
+        src="/img/gh-removebg-preview.png"
+        alt="Mascot Illustration"
         class="hero-mascot absolute top-[42%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-auto pointer-events-none -z-10"
         aria-hidden="true"
       />
@@ -240,15 +240,15 @@ import { schema } from '../../data/seo';
       <div class="h-card hero-wrap-container w-[90%] max-w-7xl mx-auto rounded-2xl p-6 lg:p-8 md:opacity-0 md:animate-[fadeInUp_0.6s_ease_0.6s_forwards]">
         <!-- Floated mascot shape image (invisible, defines text wrapping zone) -->
         <img
-          src={profile.photoUrl}
+          src="/img/gh-removebg-preview.png"
           alt=""
           class="hero-mascot-shape"
           aria-hidden="true"
         />
         <!-- Actual mascot image (positioned absolutely for visual, doesn't affect flow) -->
         <img
-          src={profile.photoUrl}
-          alt="Hyper-realistic Portrait of Ghulam Haider"
+          src="/img/gh-removebg-preview.png"
+          alt="Mascot Illustration"
           class="hero-mascot-visual"
         />
 
@@ -450,7 +450,7 @@ import { schema } from '../../data/seo';
     margin-bottom: 2rem;
 
     /* This is the magic - tells content to wrap around the image shape */
-    shape-outside: url('/img/profile-img.jpeg');
+    shape-outside: url('/img/gh-removebg-preview.png');
     shape-margin: 1.5rem; /* Space between mascot and text */
     shape-image-threshold: 0.1; /* Lower threshold - pixels >10% opacity block text flow */
   }

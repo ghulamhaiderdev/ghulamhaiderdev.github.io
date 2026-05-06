@@ -37,14 +37,24 @@ const FEATURED_REPOS = [
 // Fetch public repos (no token needed for public data)
 export async function getPublicRepos(): Promise<GitHubRepo[]> {
   try {
-    // Fetch each specific repo
+    const githubToken = import.meta.env.GITHUB_TOKEN;
+    const headers: HeadersInit = {
+      Accept: 'application/vnd.github.v3+json',
+      'User-Agent': 'Portfolio-Site',
+    };
+
+    if (githubToken) {
+      headers.Authorization = `Bearer ${githubToken}`;
+    }
+
     const repoPromises = FEATURED_REPOS.map(repoName =>
       fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}`, {
-        headers: {
-          Accept: 'application/vnd.github.v3+json',
-        },
-      }).then(res => {
-        if (!res.ok) throw new Error(`Failed to fetch ${repoName}`);
+        headers,
+      }).then(async res => {
+        if (!res.ok) {
+          const body = await res.text().catch(() => '');
+          throw new Error(`Failed to fetch ${repoName}: ${res.status} ${res.statusText} ${body}`);
+        }
         return res.json();
       }).catch(err => {
         console.error(`Failed to fetch repo ${repoName}:`, err);

@@ -24,6 +24,7 @@ jobs:
           RECAPTCHA_SECRET: ${{ secrets.RECAPTCHA_SECRET }}
           PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.PUBLIC_RECAPTCHA_SITE_KEY }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
   deploy:
     needs: build
