@@ -97,7 +97,7 @@ export const services = [
     title: 'API & Third-Party Integration',
     description:
       'Connecting platforms through <span class="hover-underline-trigger">seamless API integrations</span>. Whether it\'s telecom top-ups, AI services like ChatGPT, KYC verification systems, or logistics partners like TCS and Leopards, I ensure reliable and efficient data exchange.',
-    icon: 'puzzle',
+    icon: 'puzzle', 
     features: [
       'Third-party API Connections',
       'AI/LLM Integration',
