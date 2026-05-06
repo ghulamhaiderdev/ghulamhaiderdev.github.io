@@ -70,28 +70,8 @@ export const projects: Project[] = [
     live: 'https://clancompass.com',
     featured: false,
   },
-  {
-    title: 'Personal Family Organizer',
-    description:
-      'React-based application for family task management and scheduling',
-    image: '/img/portfolio/lists.webp',
-    tags: ['React', 'TypeScript', 'Node.js', 'MongoDB'],
-    metrics: ['Real-time sync', 'Mobile responsive'],
-    github: 'https://github.com/leoashcraft',
-    live: null,
-    featured: false,
-  },
-  {
-    title: 'DOCX Search & Replace',
-    description:
-      'Python utility for batch processing and text replacement in Word documents',
-    image: '/img/portfolio/docx-search-replace.webp',
-    tags: ['Python', 'python-docx', 'CLI'],
-    metrics: ['Batch processing', 'Regex support'],
-    github: 'https://github.com/leoashcraft',
-    live: null,
-    featured: false,
-  },
+
+ 
   {
     title: 'Radio Daddy Archive',
     description:
