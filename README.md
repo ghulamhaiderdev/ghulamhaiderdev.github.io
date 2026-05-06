@@ -1,8 +1,8 @@
-# Leo Ashcraft - Portfolio
+# Ghulam Haider - Portfolio
 
 A modern, performant single-page portfolio built with Astro, featuring an 80s arcade aesthetic with custom scroll-driven animations, horizontal panel navigation, and comprehensive accessibility support.
 
-**Live Site:** [leoashcraft.com](https://leoashcraft.com)
+**Live Site:** [ghulamhaiderdev.github.io](https://ghulamhaiderdev.github.io)
 
 ## Technical Highlights
 
@@ -13,6 +13,7 @@ This portfolio demonstrates proficiency in:
 - **Performance Optimization** - Zero-dependency horizontal scroll (no GSAP for core navigation), lazy loading, critical CSS inlining
 - **Accessibility-First Design** - Three contrast modes, animations toggle, keyboard navigation, screen reader support
 - **Mobile-First Responsive** - Touch swipe support, progressive enhancement, breakpoint-specific optimizations
+- **Backend Integration** - Secure contact form with reCAPTCHA v3, rate limiting, and Resend API integration
 - **Clean Code Practices** - Modular TypeScript utilities, shared scroll/reveal patterns, separation of concerns
 
 ## Tech Stack
@@ -35,14 +36,12 @@ This portfolio demonstrates proficiency in:
 - **JSON-LD Structured Data** - Schema.org markup for Person and WebSite
 - **Open Graph & Twitter Cards** - Rich social media previews
 - **Semantic Heading Structure** - Proper h1-h3 hierarchy for document outline
-- **Accessible Hidden Text** - Screen reader content for SEO without visual clutter
 
 ### Performance
 - **[astro-compress](https://github.com/astro-community/astro-compress)** - HTML, CSS, JS, and SVG minification
 - **[Sharp](https://sharp.pixelplumbing.com)** - Image optimization
 - **Critical CSS Inlining** - Fastest possible First Contentful Paint
 - **Font Loading Strategy** - `display=optional` to prevent layout shift
-- **Mobile Optimizations** - Disabled animations on mobile for reduced main thread work
 
 ## Features
 
@@ -51,466 +50,98 @@ This portfolio demonstrates proficiency in:
 #### Hero Section
 - **Above-the-Fold Content**: Hero includes name, bio, location, availability, and CTA buttons in a glass container
 - **Mascot Positioning**: On desktop (768px+), mascot overlaps the content container from the left with responsive sizing; on mobile, mascot appears centered behind content
-- **Responsive Breakpoints**: Multiple breakpoints (1195px, 1008px, 899px, 859px, 780px) adjust mascot position and text layout
+- **Responsive Breakpoints**: Multiple breakpoints adjust mascot position and text layout for optimal viewing on all devices
 - **4K Scaling**: Glowing orbs double in size and blur on screens above 2000px for consistent visual impact
 - **Navigation Hint**: Scroll indicator shows both mouse scroll icon and animated spacebar key to indicate navigation options
 
 #### Section Titles (Scroll-Driven)
-- **Wave Animation**: Letters scale up to 140% as a "wave" passes through based on scroll position
+- **Wave Animation**: Letters scale up as a "wave" passes through based on scroll position
 - **Sheen Effect**: Brightness sweep follows the wave animation
-- **Scroll-Driven Typewriter**: Subtitle types/untypes based on scroll position (scrolling up removes characters)
+- **Scroll-Driven Typewriter**: Subtitle types/untypes based on scroll position
 - **Bidirectional**: Animations progress forward when scrolling down, reverse when scrolling up
-- **Completion Threshold**: Text completes at 95% progress to ensure full display
-
-#### Subsection Titles (Scroll-Driven)
-"What I Offer", "Education & Certifications", and "More Work" use scroll-driven wave animation:
-- **Wave + Sheen**: Letters scale up with brightness sweep as you scroll
-- **Bidirectional**: Wave progresses/reverses based on scroll direction
-- **Hidden Until Scroll**: Titles remain hidden until scrolling into view
-
-#### About Me Content
-- **Cascade Animation**: Bio, quick info, and CTA slide up and fade in sequentially as you scroll
-
-#### Service Cards ("What I Offer")
-- **Scroll Cascade**: Services appear one by one as you scroll:
-  - "What I Offer" title hidden until scroll (uses scroll-wave animation)
-  - Web & Software Development fades in first (at 40% viewport)
-  - Cloud Solutions flies down from above
-  - CRM slides out from behind Cloud (starts when Cloud's checkmarks begin at 70% progress)
-  - Logo & Branding flies in last
-- **Content Cascade**: Each card's content animates sequentially based on scroll:
-  1. Card container fades in
-  2. Icon appears (0-5% progress)
-  3. Title types out with scroll-driven typewriter (15-45% progress)
-  4. Description fades in (55%+ progress)
-  5. Feature checkmarks cascade one by one (70-90% progress)
-  6. Logos appear one at a time - Logo & Branding card only (90-100% progress)
-- **Hover Lift**: Cards lift up with neon glow on hover (fast 0.4s), smooth 5s return on mouse leave
-- **Icon Flip**: 3D flip animation on service icons when hovering the card
-- **Title Glow**: Service titles gain a subtle pink glow on hover
-
-#### Logo & Branding Section
-- **Logo Gallery**: Displays portfolio logos (Golden Lighting Co., Honey Bee Window Cleaning, Eagle IT)
-- **Shimmer Effect**: On hover, a single shimmer sweep plays across the visible (non-transparent) parts of each logo using CSS mask
-- **Hover Scale**: Logos scale up 5% on hover
-- **Lightbox Modal**: Clicking a logo opens an in-card modal overlay with larger view
-- **High Contrast Support**: Shimmer disabled, logos display in grayscale, modal has solid background
 
 #### Horizontal Scroll Sections (Offer, Projects, Experience)
 All three horizontal scroll sections use a custom CSS sticky + transform system for smooth panel navigation:
-
 - **CSS Sticky Container**: Section pins in viewport while vertical scroll drives horizontal panel movement
-- **Scroll Preview Movement**: Panels shift up to 50px in scroll direction for visual feedback before snapping
-- **Snap-to-Panel**: Automatic snap with 450ms eased transition when crossing panel thresholds
+- **Scroll Preview Movement**: Panels shift in scroll direction for visual feedback before snapping
+- **Snap-to-Panel**: Automatic snap with eased transition when crossing panel thresholds
 - **Touch Swipe Support**: Horizontal swipe gestures navigate between panels on mobile
-- **Sound Effects**: Audio feedback on panel transitions (respects user sound preferences)
+- **Sound Effects**: Audio feedback on panel transitions
 - **Timeline Progress Bar** (Experience): Neon gradient progress bar fills as you scroll through cards
-- **Marker Dots**: Visual indicators activate as each panel comes into view
-- **Panel Height Equalization**: Panels match heights across sections for consistent UX
-- **Progressive Enhancement**: Falls back to inline layout on very small screens (374px and below)
-- **500ms Snap Lockout**: Prevents preview movement from interfering with snap transitions
-
-#### Education Cards
-- **Diagonal Grow**: Cards grow diagonally from the center of all 4 cards
-- **Hidden Title**: "Education & Certifications" title hidden until scroll
-
-#### Education Year Counters
-- **Count-Up Animation**: Years count up from 2000 to their target year (e.g., 2007, 2021, 2022, 2023)
-- **Viewport Trigger**: Animation starts 1 second after scrolling into view
-- **Smooth Easing**: Cubic ease-out for natural deceleration
-- **Re-triggerable**: Resets to 2000 on nav clicks, re-animates when scrolling back into view
-
-#### Featured Project Cards
-- **Scroll Cascade Animation**:
-  - Image flies in first (from left or right based on layout)
-  - Title and description slide out from behind the image
-  - Metrics, chips, and buttons cascade from behind the description
-  - When content is on the left, metrics/chips/buttons right-align
-- **Clickable Images**: Featured project images are clickable - opens sub-project modal or links to live site
-- **Nested Modals**: Sub-projects can contain their own sub-projects (e.g., Parker.edu umbrella)
-- **Back Navigation**: Nested modals include a back button to return to parent modal
-
-#### Other Project Cards ("More Work")
-- **Hidden Title**: "More Work" title hidden until scroll
-- **Sequential Fly-In**: Tiles fly in one by one from below as you scroll
-- **Random Icon Flip**: Project folder icons randomly flip at intervals
-- **Hover Lift**: Cards lift with enhanced glow on hover (fast 0.4s), smooth 5s return on mouse leave
-- **Modal Tile Hover**: Sub-project tiles scale up slightly on hover; in high contrast modes, colors invert
-
-#### External Link Confirmation
-- **Exit Warning Modal**: Clicking external links shows a confirmation modal
-- **URL Preview**: Displays the destination URL before navigating
-- **New Tab Opening**: External links open in a new tab after confirmation
-- **Consistent UX**: All external links (Live Site buttons, sub-project tiles, GitHub links) use the same modal
-
-#### Contact Section
-- **Cascade Animation**: "Let's Connect" title, description, contact details, and social links cascade in sequentially
-- **Form Fly-In**: "Send a Message" form container flies in from the right
-- **Disclaimer**: Disclaimer text flies in from the bottom after the form appears
-
-#### Footer
-- **Slide-Up Animation**: Footer content slides up from the bottom when scrolling into view
-
-#### Floating Arcade Decorations
-Each section features floating geometric shapes inspired by 80s arcade carpet patterns:
-- Triangles, squares, circles, and diamond shapes
-- Zigzag and squiggly SVG patterns
-- Glowing orbs with blur effects
-- Parallax scrolling with configurable speed and direction
-- GPU-accelerated transforms with `will-change-transform`
-- Respects `prefers-reduced-motion` accessibility preference
-
-#### Keyboard Navigation
-- **Spacebar Snapping**: Press spacebar to snap to the next section or panel
-- **Horizontal Scroll Sections**: Within Offer, Projects, and Experience sections, spacebar advances through panels
-- **Section Transitions**: After the last panel in a horizontal scroll section, spacebar advances to the next major section
-- **Input Awareness**: Spacebar navigation is disabled when focused on input fields or textareas
-
-#### Custom Cursor & Mouse Heatmap (Desktop)
-- **Custom Cursor**: Neon cyan dot with trailing ring that expands on interactive elements
-- **Mouse Heatmap**: Subtle glowing dots trail behind cursor, fading out over 8 seconds
-
-#### Button Hover Effects
-- **Primary Button**: Teal (#22CBCC) gradient with glow, lifts 3px on hover
-- **Secondary Button**: Teal border with glow on hover, lifts 3px
-- **High Contrast**: Lift effect disabled in high contrast modes for accessibility
 
 ### Security Measures
 
 #### Contact Info Obfuscation
-Email and phone are stored reversed and reconstructed at runtime to prevent bot scraping:
-```typescript
-// Stored as reversed strings in profile data
-contact: {
-  email: { user: 'nhoj', website: 'moc.eod' },
-  phone: { area: ')999(', number: '9035-768' },
-}
-
-// Reconstructed when displayed
-const email = user.reverse() + '@' + website.reverse();  // john@doe.com
-const phone = area.reverse() + ' ' + number.reverse();   // (999) 867-5309
-```
+Email and phone are stored reversed and reconstructed at runtime to prevent bot scraping.
 
 #### Contact Form Protection
 Multi-layered spam prevention:
-
-- **reCAPTCHA v3** - Invisible bot detection with score-based validation (≥0.5 threshold)
-- **IP Rate Limiting** - 5 submissions per hour per IP address (429 response with reset timer)
-- **Honeypot Field** - Hidden "website" field that bots fill but humans never see
-- **Timing Analysis** - Rejects submissions under 3 seconds (bots submit instantly)
-- **Silent Rejection** - Bot submissions return fake success to avoid tipping off attackers
-- **Input Validation** - Field length limits, email format validation, HTML escaping
-- **Mailtrap Integration** - Secure email delivery
-
-### Responsive Navigation
-- Scroll-aware navbar with dynamic opacity
-- Arcade carpet gradient background on scroll
-- Mobile hamburger menu with chasing teal border animation on expanded nav
-- Heat glow effect follows cursor on desktop (contained within nav boundaries)
-- Navigation links bold on hover; inverted colors in high contrast modes
-- Navigation links: Home, About, Projects, Experience, GitHub, Contact
+- **reCAPTCHA v3** - Invisible bot detection with score-based validation
+- **IP Rate Limiting** - 5 submissions per hour per IP address
+- **Honeypot Field** - Hidden field that bots fill but humans never see
+- **Timing Analysis** - Rejects submissions under 3 seconds
+- **Resend API Integration** - Secure and reliable email delivery
 
 ### GitHub Integration
-- Live contribution heatmap via GitHub GraphQL API
-- Auto-scrolls to show recent activity on mobile
-- Cached responses for performance
-- **Scroll Animations**:
-  - Heatmap hidden until scroll, fades in at 60% viewport
-  - "Recent Repositories" title hidden until scroll
-  - Repository cards fly out one by one from below
-- **Shimmer Animation**: Active tiles randomly shimmer with diagonal light sweep
-- **Inactive Tile Pulse**: Empty tiles subtly pulse opacity (100% to 50%) over 3 seconds
-
-### Now Page
-
-A dedicated [/now](https://leoashcraft.com/now) page inspired by the [nownownow.com](https://nownownow.com/about) movement - a snapshot of what I'm currently focused on, updated periodically.
-
-#### Content Sections
-- **I'm employed** - Current work at Parker University
-- **I'm planning** - Upcoming events and projects
-- **I'm learning** - Conferences, certifications, skill development
-- **I'm traveling** - Recent trips and adventures
-- **I'm adopting AI** - Thoughts on AI-assisted development
-- **I'm creating** - Side projects in progress
-- **I'm owning it** - Favorite work projects and accomplishments
-- **I'm hobbying** - Personal projects outside of software
-
-#### Features
-- **Cascade Animation**: Sections fade in sequentially on page load
-- **External Link Modal**: All external links trigger a confirmation modal before leaving the site
-- **Hobby Image Previews**: Hover over hobby project links to see a floating thumbnail preview
-- **Hobby Image Modal**: Click hobby links to view full-size images in a lightbox modal
-- **Lazy Loading**: Thumbnail images load on hover, full images load on click
-- **High Contrast Support**: Grayscale borders, adjusted backgrounds for accessibility
-- **Footer Link**: Accessible via `/now` link in the site footer
+- **Contribution Heatmap**: Live contribution heatmap via GitHub GraphQL API
+- **Recent Repositories**: Dynamically fetched repository cards with fly-in animations
+- **Visual Feedback**: Active tiles randomly shimmer; inactive tiles subtly pulse
 
 ## Project Structure
 
 ```
 src/
 ├── components/
-│   ├── common/          # Header, Footer, SocialIcons, SectionHeader, ArcadeDecorations, ThemeToggle, ExternalLinkModal
+│   ├── common/          # Header, Footer, ArcadeDecorations, ThemeToggle
 │   ├── contact/         # Contact form (React)
 │   ├── github/          # GitHub heatmap (React)
-│   ├── hero/            # Hero section with typewriter & word animations
+│   ├── hero/            # Hero section with animations
 │   ├── sections/        # About, Experience, Projects, Contact
-│   └── ui/              # Reusable UI components (Icon, ToggleSwitch, SocialLink)
+│   └── ui/              # Reusable UI components
 ├── data/
 │   ├── experience.ts    # Work history & education
-│   ├── navigation.ts    # Nav menu items
 │   ├── profile.ts       # Personal info & contact (obfuscated)
-│   ├── projects.ts      # Featured projects (supports nested sub-projects)
-│   └── skills.ts        # Technical skills & services (including Logo & Branding)
+│   ├── projects.ts      # Featured projects
+│   └── skills.ts        # Technical skills & services
 ├── layouts/
 │   └── BaseLayout.astro # Main layout with SEO
 ├── lib/
 │   ├── contact.ts          # Email/phone unscrambling utilities
-│   ├── education.ts        # Education section scroll reveal & year counters
-│   ├── experience-scroll.ts # Experience horizontal scroll controller
-│   ├── icon-flip.ts        # Shared icon flip animation logic
-│   ├── keyboard-nav.ts     # Spacebar keyboard navigation for sections
-│   ├── about-scroll.ts     # Offer section horizontal scroll controller
-│   ├── parallax.ts         # Section-based parallax for decorations
-│   ├── projects-scroll.ts  # Projects horizontal scroll controller
 │   ├── scroll-reveal.ts    # Shared scroll-triggered reveal animations
-│   ├── scroll-wave.ts      # Scroll-driven wave animation for titles
-│   ├── section-utils.ts    # Shared helpers (nav height, animations check)
-│   ├── sounds.ts           # Sound effect utilities (snap, tap, cascade)
-│   ├── theme.ts            # Theme & animations state management
-│   ├── touch-swipe.ts      # Touch swipe gesture detection
-│   └── typewriter.ts       # Natural typing delay utilities
+│   ├── sounds.ts           # Sound effect utilities
+│   └── theme.ts            # Theme & animations state management
 ├── pages/
 │   ├── api/             # Server endpoints (contact form)
-│   ├── index.astro      # Single-page portfolio
-│   └── now.astro        # Now page - current focus & updates
+│   └── index.astro      # Single-page portfolio
 └── styles/
-    ├── global.css              # Theme, animations & chasing border utilities
+    ├── global.css              # Theme & animations
     ├── high-contrast.css       # High contrast dark mode styles
     └── high-contrast-light.css # High contrast light mode styles
 ```
-
-## Code Architecture
-
-### Horizontal Scroll System
-The horizontal scroll sections demonstrate a clean separation of concerns:
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  Section Component (.astro)                                 │
-│  - HTML structure & CSS styling                             │
-│  - Imports and initializes scroll controller                │
-└─────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│  Scroll Controller (lib/*-scroll.ts)                        │
-│  - Panel state management                                   │
-│  - Scroll position calculation                              │
-│  - Preview movement & snap logic                            │
-│  - Touch swipe integration                                  │
-└─────────────────────────────────────────────────────────────┘
-                              │
-          ┌───────────────────┼───────────────────┐
-          ▼                   ▼                   ▼
-┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
-│  touch-swipe.ts │ │  sounds.ts      │ │  section-utils  │
-│  Gesture detect │ │  Audio feedback │ │  Nav height,    │
-│  Swipe threshold│ │  Debouncing     │ │  anim checks    │
-└─────────────────┘ └─────────────────┘ └─────────────────┘
-```
-
-### Shared Utilities Pattern
-Common functionality is extracted into reusable modules:
-
-- **`sounds.ts`** - Factory functions for snap/tap sounds with debouncing and user preference checks
-- **`scroll-reveal.ts`** - Configurable scroll-triggered reveal for card grids
-- **`section-utils.ts`** - Shared helpers used across all scroll sections
-- **`touch-swipe.ts`** - Reusable touch gesture handler with configurable thresholds
-
-## CSS Architecture
-
-### Chasing Border System
-Reusable animated border utility with CSS custom properties:
-
-```css
-/* Base class - apply to element */
-.chase-border {
-  --chase-color: rgba(255, 0, 255, 0.6);  /* Border glow color */
-  --chase-inset: -1px;                     /* Pseudo-element inset */
-  --chase-bg: rgba(23, 16, 36, 0.98);     /* Inner background */
-  --chase-radius: 0.75rem;                 /* Border radius */
-  --chase-speed: 3s;                       /* Animation duration */
-}
-
-/* Color variants */
-.chase-cyan { --chase-color: rgba(0, 255, 247, 0.6); }
-.chase-pink { --chase-color: rgba(255, 0, 255, 0.6); }
-.chase-yellow { --chase-color: rgba(255, 255, 0, 0.7); }
-
-/* Modifiers */
-.chase-always   /* Always animate (no hover required) */
-.chase-reverse  /* Reverse rotation direction */
-```
-
-Usage example:
-```html
-<!-- Hover-activated chasing border -->
-<div class="chase-border modal-tile">...</div>
-
-<!-- Always-on chasing border with cyan color -->
-<div class="chase-border chase-always chase-cyan modal-container">...</div>
-```
-
-### Glow Utilities
-```css
-.glow-sm      /* 10px pink glow */
-.glow-md      /* 20px pink glow */
-.glow-lg      /* 30px pink + purple glow */
-.glow-cyan-sm /* 10px cyan glow */
-.glow-cyan-md /* 20px cyan glow */
-.glow-cyan-lg /* 30px cyan glow */
-```
-
-### Reusable UI Components
-
-#### ToggleSwitch
-A styled toggle switch component for boolean settings.
-
-```astro
----
-import ToggleSwitch from '@/components/ui/ToggleSwitch.astro';
----
-
-<ToggleSwitch checked={false} class="my-custom-class" />
-```
-
-Props:
-- `checked` (boolean, default: `false`) - Initial toggle state
-- `class` (string, optional) - Additional CSS classes
-
-State is managed via `data-checked` attribute. Update with JavaScript:
-```javascript
-const toggle = document.querySelector('.toggle-switch');
-toggle.setAttribute('data-checked', 'true');
-toggle.querySelector('.toggle-switch-knob').classList.add('translate-x-4');
-```
-
-#### SocialLink
-A reusable social link button with platform-specific icons and hover colors.
-
-```astro
----
-import SocialLink from '@/components/ui/SocialLink.astro';
----
-
-<SocialLink platform="github" href="https://github.com/user" size="md" />
-<SocialLink platform="linkedin" href="https://linkedin.com/in/user" size="lg" />
-<SocialLink platform="email" href="mailto:user@example.com" size="sm" />
-```
-
-Props:
-- `platform` (`'github' | 'linkedin' | 'email'`) - Platform type (required)
-- `href` (string) - Link URL (required)
-- `size` (`'sm' | 'md' | 'lg'`, default: `'md'`) - Icon and container size
-- `class` (string, optional) - Additional CSS classes
-
-| Size | Container | Icon |
-|------|-----------|------|
-| sm | 32px (w-8) | 16px (w-4) |
-| md | 40px (w-10) | 20px (w-5) |
-| lg | 48px (w-12) | 24px (w-6) |
-
-Platform hover colors:
-- All platforms: Neon pink (`hover:text-neon-pink`) for consistent styling
-
-External links (GitHub, LinkedIn) automatically include `target="_blank"` and `rel="noopener noreferrer"`.
-
-## Image Guidelines
-
-### Project Images
-Recommended sizes for optimal display and retina support:
-
-| Image Type | Display Size | Recommended Size | Aspect Ratio |
-|------------|--------------|------------------|--------------|
-| Featured Projects | ~550px | 1400 x 800px | 7:4 |
-| Other Projects | ~350px | 800 x 600px | 4:3 |
-| Sub-Projects (Modal) | ~260px | 600 x 338px | 16:9 |
-| Nested Sub-Projects | ~260px | 600 x 338px | 16:9 |
-
-- Use AVIF format for best compression
-- Quality: 80-85% compression
-- Keep consistent aspect ratios within each category
 
 ## Design Philosophy
 
 ### Visual Theme
 The design draws inspiration from 80s arcade carpet patterns, featuring:
 - Deep purple/black backgrounds (`#0a0015`)
-- Teal accent color (`#22CBCC`) for section headings, buttons, nav borders, and highlights
-- Neon accent colors for decorations (cyan `#00fff7`, yellow `#ffff00`, pink `#ff00ff`)
-- Floating geometric shapes (triangles, squares, circles, squiggly lines)
-- Glassmorphism cards with gradient borders
-- Subtle glow effects and animations
-
-### Performance First
-- Static generation for instant page loads
-- Islands architecture - JavaScript only where needed
-- Lazy loading for below-fold content
-- Optimized Core Web Vitals (LCP, FID, CLS)
+- Teal accent color (`#22CBCC`) for highlights and navigation
+- Neon accent colors for decorations
+- Floating geometric shapes and glassmorphism cards
 
 ### Accessibility
+- **High Contrast Modes**: Normal, High Contrast Dark, and High Contrast Light options
+- **Animations Toggle**: Global switch to disable all decorative animations
+- **Keyboard Navigation**: Spacebar snapping and full keyboard support
+- **Semantic HTML**: Proper structure for screen readers
 
-#### High Contrast Modes
-A theme toggle dropdown in the navigation provides three contrast options:
+## Deployment
 
-- **Normal**: Default arcade aesthetic with neon colors and animations
-- **High Contrast Dark**: Black background, white text, grayscale images
-- **High Contrast Light**: White background, black text, grayscale images
+This project is automatically deployed to GitHub Pages via GitHub Actions.
 
-Features:
-- **Theme Persistence**: Selection saved to localStorage (`portfolio-theme`), persists across sessions
-- **No Flash**: Inline script in `<head>` applies theme before first paint
-- **Smooth Transitions**: 1-second loading overlay with spinner during theme changes for smoother UX
-- **Disabled Animations**: All decorative animations stopped for reduced distraction
-- **Mobile Optimizations**: High contrast light mode adjusts hero section with gradient background
-- **Keyboard Accessible**: Dropdown supports keyboard navigation and Escape to close
-- **Menu Auto-Close**: Info menu and hamburger menu collapse when theme is changed
-- **Inverted Hover Effects**: Nav links, social icons, and theme toggle invert colors with rounded background on hover
-
-CSS files:
-- `src/styles/high-contrast.css` - Dark high contrast theme
-- `src/styles/high-contrast-light.css` - Light high contrast theme
-- `src/lib/theme.ts` - Theme and animations state management
-
-#### Animations Toggle
-A toggle switch inside the contrast dropdown allows users to disable all animations:
-
-- **Global Disable**: Stops all CSS animations and transitions site-wide
-- **Static Backgrounds**: Parallax backgrounds remain visible but without parallax movement
-- **Static Text**: Hero typewriter shows "Full Stack Software Developer" without typing animation
-- **Static Titles**: Hero name and section title wave animations are disabled
-- **Re-triggerable**: Turning animations back on restarts the typewriter effect
-- **Cursor Visibility**: Typewriter cursors are hidden when animations are disabled
-- **Persistence**: Setting saved to localStorage (`portfolio-animations`), applies immediately on page load
-
-Implementation:
-```typescript
-// src/lib/theme.ts
-getAnimationsEnabled()    // Returns boolean
-setAnimationsEnabled(enabled: boolean)
-toggleAnimations()        // Returns new state
-
-// Dispatches 'animations-change' custom event for React components
-```
-
-CSS uses `[data-animations="disabled"]` attribute on `<html>` to disable animations globally.
-
-#### Other Accessibility Features
-- Semantic HTML structure
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- `prefers-reduced-motion` respect
-- High contrast color choices in normal mode
+### Workflow
+The deployment process is defined in `.github/workflows/deploy.yml`:
+1. **Build**: Astro project is built into static files
+2. **Deploy**: Static files are pushed to the `gh-pages` branch
 
 ## Development
 
@@ -538,25 +169,19 @@ GITHUB_TOKEN=ghp_xxx
 PUBLIC_RECAPTCHA_SITE_KEY=6Lxxx
 RECAPTCHA_SECRET=6Lxxx
 
-# Mailtrap (email delivery)
-MAILTRAP_TOKEN=xxx
+# Resend API (email delivery)
+RESEND_API_KEY=re_xxx
+CONTACT_EMAIL=your-email@example.com
 ```
 
-## What This Codebase Demonstrates
+## License
 
-### For Hiring Managers & Technical Reviewers
+This project is open source and available for reference.
 
-This portfolio showcases:
+---
 
-**Frontend Engineering**
-- Custom scroll-driven animations without heavy animation libraries
-- Touch gesture handling with proper threshold detection
-- State management for complex UI interactions (panel states, reveal tracking)
-- Performance-conscious patterns (rAF throttling, lazy loading, CSS transforms)
-
-**Code Quality**
-- TypeScript throughout with proper interfaces and type safety
-- Modular architecture with clear separation of concerns
+Built with Astro, TypeScript, and attention to detail by **Ghulam Haider**.
+rchitecture with clear separation of concerns
 - Reusable utility functions and shared patterns
 - Consistent naming conventions and code organization
 
