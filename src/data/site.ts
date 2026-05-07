@@ -1,8 +1,6 @@
 export const site = {
   footer: {
-    tagline: "Built with Astro and lots of caffeine.",
-    disclaimer:
-      "Not affiliated with Catch+Release, Hive Mind Social, Radio/TV Broadcast or any other individuals named GH.",
+    tagline: "Built with Astro.",
   },
   sections: {
     about: {
